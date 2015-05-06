@@ -24,7 +24,7 @@ app.get('/random-user', function(req, res){
 
 app.post('/login', authenticate, function(req, res){
   var token = jwt.sign({
-    username: username
+    username: user.username
   }, jwtSecret);
   res.send({
       token: token,

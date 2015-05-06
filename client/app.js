@@ -18,7 +18,8 @@
 
     function login(username, password) {
       UserFactory.login(username, password).then(function success(response) {
-        vm.user = response.data;
+        vm.user = response.data.user;
+        alert(response.data.token);
       }, handleError);
     }
 
