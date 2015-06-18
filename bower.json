@@ -1,0 +1,22 @@
+{
+  "name": "node-angular-jwt",
+  "version": "0.0.1",
+  "homepage": "https://github.com/benhalverson/node-angular-jwt",
+  "authors": [
+    "Ben Halverson <benhalverson33@gmail.com>"
+  ],
+  "description": "demo for jwt",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "bootstrap": "~3.3.5"
+  }
+}
