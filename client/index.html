@@ -3,16 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>JWT Example</title>
+  <link ref="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+  <link ref="stylesheet" href="styles.css" />
 </head>
 <body ng-controller="MainCtrl as vm">
 
+<div class="container" ng-show="vm.user">
+      <div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="{{vm.randomUser.avatar}}" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Name: {{vm.randomUser.name}}<br>
+    Website: <a href="http://{{vm.randomUser.website}}">{{vm.randomUser.website}}</a>
+    </h4>
+    <p>Contact Info</p>
+
+    <div>{{vm.randomUser.email}}</div>
+    <div>{{vm.randomUser.address.street}}<span>{{vm.randomUser.address.suite}}</span></div>
+    <div>{{vm.randomUser.address.city}}, {{vm.randomUser.address.zipcode}}</div>
+  </div>
+</div>
+    </div>
 
   <div ng-show="vm.user">
-    <h1>Get Random User</h1>
-    <h2>Welcome {{vm.user.username}}</h2>
+<!-- <h1>Get Random User</h1> -->
+<h2>Welcome {{vm.user.username}}</h2>
     <button ng-click="vm.getRandomUser()">Get User</button>
     <button ng-click="vm.logout()">Logout</button>
-    <pre ng-bind="vm.randomUser | json"></pre>
+  <!--   <pre ng-bind="vm.randomUser | json"></pre> -->
+  <!-- <img src="{{vm.randomUser.avatar}}" /> -->
   </div>
 
   <div ng-hide="vm.user">
@@ -25,7 +47,9 @@
     </form>
   </div>
 
-  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/jquery/dist/jquery.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

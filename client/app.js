@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
   var app = angular.module('app', [], function config($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
@@ -14,12 +14,12 @@
     vm.logout = logout;
 
 
-// initialization
-UserFactory.getUser().then(function success(response){
+    // initialization
+    UserFactory.getUser()
+  .then(function success(response) {
   vm.user = response.data;
-
-
 });
+
     function getRandomUser() {
       RandomUserFactory.getUser().then(function success(response) {
         vm.randomUser = response.data;
